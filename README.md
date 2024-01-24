@@ -15,4 +15,6 @@ In addition, set the value of INJECTIONS_LIST in the helm/values.yaml with the l
 
 [Docker](https://www.docker.com/)
 
+[Kubernetes](https://kubernetes.io/)
+
 [Helm](https://helm.sh/)
