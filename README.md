@@ -12,5 +12,7 @@ In addition, set the value of INJECTIONS_LIST in the helm/values.yaml with the l
 
 ## Technologies
 [Python](https://www.python.org/)
+
 [Docker](https://www.docker.com/)
+
 [Helm](https://helm.sh/)
