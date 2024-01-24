@@ -1,0 +1,18 @@
+imagePullSecrets: 
+  name: security-ml-secret
+
+kubeconfigSecret: kubeconfig-secret
+
+env_vars:
+  injections_list:
+    name: "INJECTIONS_LIST"
+    value: "httpbin"
+  namespace:
+    name: "NAMESPACE"
+    value: "security"
+  env1:
+    name: "ENV1"
+    value: "Hello World"
+  env2:
+    name: "ENV2"
+    value: "It's a beautiful day!"

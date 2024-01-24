@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: injection-mechanism
+spec:
+  template: 
+    spec:
+      containers:  
+      - name: injection-mechanism
+        image: "<path-to-container-registry>"
+        imagePullPolicy: Always
+        env: 
+          - name: INJECTIONS_LIST
+            value: {{ .Values.env_vars.injections_list.value }}
+          - name: NAMESPACE
+            value: {{ .Values.env_vars.namespace.value }}
+          - name: ENV1
+            value: {{ .Values.env_vars.env1.value }}
+          - name: ENV2
+            value: {{ .Values.env_vars.env2.value }}
+          - name: IMAGEPULLSECRET
+            value: {{ .Values.imagePullSecrets.name }}
+        volumeMounts:
+          - name: kubeconfig-volume
+            mountPath: /root/.kube/config
+            subPath: config
+      volumes:
+        - name: kubeconfig-volume
+          secret:
+            secretName: kubeconfig-hspf
+      imagePullSecrets:
+      - name: {{ .Values.imagePullSecrets.name }}
+      restartPolicy: Never
+  backoffLimit: 3
+
