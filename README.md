@@ -9,3 +9,8 @@ To use this system, you have to create the docker image using the existent Docke
 In addition, set the value of INJECTIONS_LIST in the helm/values.yaml with the list of deployment names next to which the sidecar will be deployed. 
 <br> 
 **Observation**: Any container may be placed as a sidecar. Choose at your convenience and adapt the content of _scripts/injectionMechanism.sh_ script before creating the container image.
+
+## Technologies
+[Python](https://www.python.org/)
+[Docker](https://www.docker.com/)
+[Helm](https://helm.sh/)
